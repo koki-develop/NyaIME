@@ -11,6 +11,7 @@
 		E7C8AF7E2C8AEFFB006FE9AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C8AF7D2C8AEFFB006FE9AA /* Assets.xcassets */; };
 		E7C8AF812C8AEFFB006FE9AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C8AF802C8AEFFB006FE9AA /* Preview Assets.xcassets */; };
 		E7C8AF8A2C8B2546006FE9AA /* NyaIMEInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8AF892C8B2546006FE9AA /* NyaIMEInputController.swift */; };
+		E7C8AF912C8B26FB006FE9AA /* cat.svg in Resources */ = {isa = PBXBuildFile; fileRef = E7C8AF902C8B26FB006FE9AA /* cat.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		E7C8AF802C8AEFFB006FE9AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E7C8AF822C8AEFFB006FE9AA /* NyaIME.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NyaIME.entitlements; sourceTree = "<group>"; };
 		E7C8AF892C8B2546006FE9AA /* NyaIMEInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyaIMEInputController.swift; sourceTree = "<group>"; };
+		E7C8AF902C8B26FB006FE9AA /* cat.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cat.svg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		E7C8AF782C8AEFF9006FE9AA /* NyaIME */ = {
 			isa = PBXGroup;
 			children = (
+				E7C8AF8F2C8B26EA006FE9AA /* Resources */,
 				E7C8AF882C8AF0E4006FE9AA /* Sources */,
 				E7C8AF7D2C8AEFFB006FE9AA /* Assets.xcassets */,
 				E7C8AF822C8AEFFB006FE9AA /* NyaIME.entitlements */,
@@ -75,6 +78,14 @@
 				E7C8AF892C8B2546006FE9AA /* NyaIMEInputController.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		E7C8AF8F2C8B26EA006FE9AA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E7C8AF902C8B26FB006FE9AA /* cat.svg */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7C8AF912C8B26FB006FE9AA /* cat.svg in Resources */,
 				E7C8AF812C8AEFFB006FE9AA /* Preview Assets.xcassets in Resources */,
 				E7C8AF7E2C8AEFFB006FE9AA /* Assets.xcassets in Resources */,
 			);
