@@ -50,7 +50,7 @@
 		E7C8AF782C8AEFF9006FE9AA /* NyaIME */ = {
 			isa = PBXGroup;
 			children = (
-				E7C8AF792C8AEFF9006FE9AA /* NyaIMEApp.swift */,
+				E7C8AF882C8AF0E4006FE9AA /* Sources */,
 				E7C8AF7D2C8AEFFB006FE9AA /* Assets.xcassets */,
 				E7C8AF822C8AEFFB006FE9AA /* NyaIME.entitlements */,
 				E7C8AF7F2C8AEFFB006FE9AA /* Preview Content */,
@@ -64,6 +64,14 @@
 				E7C8AF802C8AEFFB006FE9AA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E7C8AF882C8AF0E4006FE9AA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E7C8AF792C8AEFF9006FE9AA /* NyaIMEApp.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
