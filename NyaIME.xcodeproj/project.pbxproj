@@ -22,6 +22,7 @@
 		E7C8AF822C8AEFFB006FE9AA /* NyaIME.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NyaIME.entitlements; sourceTree = "<group>"; };
 		E7C8AF892C8B2546006FE9AA /* NyaIMEInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyaIMEInputController.swift; sourceTree = "<group>"; };
 		E7C8AF902C8B26FB006FE9AA /* cat.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cat.svg; sourceTree = "<group>"; };
+		E7C8AF922C8B2794006FE9AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +55,7 @@
 		E7C8AF782C8AEFF9006FE9AA /* NyaIME */ = {
 			isa = PBXGroup;
 			children = (
+				E7C8AF922C8B2794006FE9AA /* Info.plist */,
 				E7C8AF8F2C8B26EA006FE9AA /* Resources */,
 				E7C8AF882C8AF0E4006FE9AA /* Sources */,
 				E7C8AF7D2C8AEFFB006FE9AA /* Assets.xcassets */,
@@ -294,6 +296,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NyaIME/Info.plist;
 				INFOPLIST_KEY_LSBackgroundOnly = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,6 +325,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NyaIME/Info.plist;
 				INFOPLIST_KEY_LSBackgroundOnly = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
