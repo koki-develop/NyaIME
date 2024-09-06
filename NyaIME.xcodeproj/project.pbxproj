@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E7C8AF7A2C8AEFF9006FE9AA /* NyaIMEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8AF792C8AEFF9006FE9AA /* NyaIMEApp.swift */; };
-		E7C8AF7C2C8AEFF9006FE9AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8AF7B2C8AEFF9006FE9AA /* ContentView.swift */; };
 		E7C8AF7E2C8AEFFB006FE9AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C8AF7D2C8AEFFB006FE9AA /* Assets.xcassets */; };
 		E7C8AF812C8AEFFB006FE9AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C8AF802C8AEFFB006FE9AA /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +15,6 @@
 /* Begin PBXFileReference section */
 		E7C8AF762C8AEFF9006FE9AA /* NyaIME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NyaIME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C8AF792C8AEFF9006FE9AA /* NyaIMEApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyaIMEApp.swift; sourceTree = "<group>"; };
-		E7C8AF7B2C8AEFF9006FE9AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E7C8AF7D2C8AEFFB006FE9AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7C8AF802C8AEFFB006FE9AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E7C8AF822C8AEFFB006FE9AA /* NyaIME.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NyaIME.entitlements; sourceTree = "<group>"; };
@@ -53,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				E7C8AF792C8AEFF9006FE9AA /* NyaIMEApp.swift */,
-				E7C8AF7B2C8AEFF9006FE9AA /* ContentView.swift */,
 				E7C8AF7D2C8AEFFB006FE9AA /* Assets.xcassets */,
 				E7C8AF822C8AEFFB006FE9AA /* NyaIME.entitlements */,
 				E7C8AF7F2C8AEFFB006FE9AA /* Preview Content */,
@@ -139,7 +136,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7C8AF7C2C8AEFF9006FE9AA /* ContentView.swift in Sources */,
 				E7C8AF7A2C8AEFF9006FE9AA /* NyaIMEApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
