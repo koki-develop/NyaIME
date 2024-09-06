@@ -10,6 +10,7 @@
 		E7C8AF7A2C8AEFF9006FE9AA /* NyaIMEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8AF792C8AEFF9006FE9AA /* NyaIMEApp.swift */; };
 		E7C8AF7E2C8AEFFB006FE9AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C8AF7D2C8AEFFB006FE9AA /* Assets.xcassets */; };
 		E7C8AF812C8AEFFB006FE9AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C8AF802C8AEFFB006FE9AA /* Preview Assets.xcassets */; };
+		E7C8AF8A2C8B2546006FE9AA /* NyaIMEInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8AF892C8B2546006FE9AA /* NyaIMEInputController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +19,7 @@
 		E7C8AF7D2C8AEFFB006FE9AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7C8AF802C8AEFFB006FE9AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E7C8AF822C8AEFFB006FE9AA /* NyaIME.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NyaIME.entitlements; sourceTree = "<group>"; };
+		E7C8AF892C8B2546006FE9AA /* NyaIMEInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyaIMEInputController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				E7C8AF792C8AEFF9006FE9AA /* NyaIMEApp.swift */,
+				E7C8AF892C8B2546006FE9AA /* NyaIMEInputController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7C8AF7A2C8AEFF9006FE9AA /* NyaIMEApp.swift in Sources */,
+				E7C8AF8A2C8B2546006FE9AA /* NyaIMEInputController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
