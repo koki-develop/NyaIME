@@ -69,7 +69,8 @@ jobs:
           NYAIME_HOMEPAGE: ${{ steps.tap.outputs.homepage }}
           NYAIME_DESC: ${{ steps.tap.outputs.desc }}
         run: |
-          cat <<EOF > nyaime.rb
+          mkdir Casks
+          cat <<EOF > Casks/nyaime.rb
           cask "nyaime" do
             version "${NYAIME_VERSION}"
             url "https://github.com/koki-develop/NyaIME/releases/download/v#{version}/NyaIME.pkg"
@@ -83,11 +84,11 @@ jobs:
             uninstall pkgutil: "me.koki.inputmethod.NyaIME"
           end
           EOF
-          cat nyaime.rb
+          cat Casks/nyaime.rb
 
           # https://github.com/actions/checkout#push-a-commit-using-the-built-in-token
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ./nyaime.rb
+          git add ./Casks/nyaime.rb
           git commit -m "Brew cask update for nyaime version v${NYAIME_VERSION}"
           git push origin main
