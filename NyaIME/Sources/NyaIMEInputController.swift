@@ -10,6 +10,10 @@ import InputMethodKit
 @objc(NyaIMEInputController)
 class NyaIMEInputController: IMKInputController {
     override func handle(_ event: NSEvent!, client sender: Any!) -> Bool {
+        guard let eventType = getEventType(event) else {
+            return false
+        }
+
         if let text = event.characters {
             self.insertText(text.uppercased())
             return true
