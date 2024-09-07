@@ -24,4 +24,19 @@ class NyaIMEInputController: IMKInputController {
 
         return false
     }
+
+    func insertText(_ text: String) {
+        guard let client = client() else {
+            return
+        }
+        client.insertText(text, replacementRange: NSRange(location: NSNotFound, length: NSNotFound))
+    }
+
+    func setMarkedText(_ text: String) {
+        guard let client = client() else {
+            return
+        }
+        let cursorPosition = NSRange(location: NSNotFound, length: NSNotFound)
+        client.setMarkedText(text, selectionRange: cursorPosition, replacementRange: cursorPosition)
+    }
 }
