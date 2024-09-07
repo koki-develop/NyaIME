@@ -9,6 +9,9 @@ import InputMethodKit
 
 @objc(NyaIMEInputController)
 class NyaIMEInputController: IMKInputController {
+    var inputState: InputState = .normal
+    var composingText: String = ""
+
     override func handle(_ event: NSEvent!, client sender: Any!) -> Bool {
         guard let eventType = getEventType(event) else {
             return false
