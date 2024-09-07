@@ -1,11 +1,15 @@
 name: Release
 
 on:
-  push: # TODO: releaese trigger
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   release:
     runs-on: macos-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -34,9 +38,7 @@ jobs:
             --package-path ./tmp \
             ./tmp/NyaIME.pkg
 
-      # TODO: upload package to release
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: NyaIME
-          path: ./tmp/NyaIME.pkg
+          files: ./tmp/NyaIME.pkg
