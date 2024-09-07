@@ -42,3 +42,49 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: ./tmp/NyaIME.pkg
+
+      - name: Checkout homebrew-tap
+        uses: actions/checkout@v4
+        with:
+          repository: koki-develop/homebrew-tap
+          path: homebrew-tap
+          token: ${{ secrets.TAP_GITHUB_TOKEN }}
+
+      - name: Tap metadata
+        id: tap
+        env:
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "version=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
+          echo "sha256=$(shasum -a 256 ./tmp/NyaIME.pkg | awk '{print $1}')" >> $GITHUB_OUTPUT
+          echo "homepage=https://github.com/koki-develop/NyaIME" >> $GITHUB_OUTPUT
+          echo "desc=$(gh repo view koki-develop/NyaIME --json description --jq .description)" >> $GITHUB_OUTPUT
+
+      - name: Update Tap
+        working-directory: homebrew-tap
+        env:
+          NYAIME_VERSION: ${{ steps.tap.outputs.version }}
+          NYAIME_SHA256: ${{ steps.tap.outputs.sha256 }}
+          NYAIME_HOMEPAGE: ${{ steps.tap.outputs.homepage }}
+          NYAIME_DESC: ${{ steps.tap.outputs.desc }}
+        run: |
+          cat <<EOF > nyaime.rb
+          cask "nyaime" do
+            version "${NYAIME_VERSION}"
+            url "https://github.com/koki-develop/NyaIME/releases/download/v#{version}/NyaIME.pkg"
+            sha256 "${NYAIME_SHA256}"
+
+            name "NyaIME"
+            desc "${NYAIME_DESC}"
+            homepage "${NYAIME_HOMEPAGE}"
+
+            pkg "NyaIME.pkg"
+            uninstall pkgutil: "me.koki.inputmethod.NyaIME"
+          end
+          EOF
+          cat nyaime.rb
+
+          git add ./nyaime.rb
+          git commit -m "Brew cask update for nyaime version v${NYAIME_VERSION}"
+          git push origin main
