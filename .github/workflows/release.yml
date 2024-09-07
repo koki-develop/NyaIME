@@ -1,0 +1,44 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: macos-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          xcodebuild \
+            -project ./NyaIME.xcodeproj \
+            -configuration Release \
+            CODE_SIGNING_ALLOWED=NO
+          mkdir ./tmp/app
+          mv ./build/Release/NyaIME.app ./tmp/app/
+
+      - name: Build Package
+        run: |
+          xcrun pkgbuild \
+            --root ./tmp/app \
+            --component-plist ./pkg.plist \
+            --identifier me.koki.inputmethod.NyaIME \
+            --install-location '/Library/Input Methods' \
+            ./tmp/tmp.pkg
+
+      - name: Build Installer
+        run: |
+          xcrun productbuild \
+            --distribution distribution.xml \
+            --package-path ./tmp \
+            ./tmp/NyaIME.pkg
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ./tmp/NyaIME.pkg
