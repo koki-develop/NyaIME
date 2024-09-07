@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E762D41E2C8C444900B57AEE /* InputState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E762D41D2C8C444900B57AEE /* InputState.swift */; };
-		E7636DFB2C8C85C3000F8DCA /* Roman2Kana.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7636DFA2C8C85C3000F8DCA /* Roman2Kana.swift */; };
+		E7636DFB2C8C85C3000F8DCA /* ComposingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7636DFA2C8C85C3000F8DCA /* ComposingText.swift */; };
 		E7C8AF7A2C8AEFF9006FE9AA /* NyaIMEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8AF792C8AEFF9006FE9AA /* NyaIMEApp.swift */; };
 		E7C8AF7E2C8AEFFB006FE9AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C8AF7D2C8AEFFB006FE9AA /* Assets.xcassets */; };
 		E7C8AF812C8AEFFB006FE9AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C8AF802C8AEFFB006FE9AA /* Preview Assets.xcassets */; };
@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		E762D41D2C8C444900B57AEE /* InputState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputState.swift; sourceTree = "<group>"; };
-		E7636DFA2C8C85C3000F8DCA /* Roman2Kana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roman2Kana.swift; sourceTree = "<group>"; };
+		E7636DFA2C8C85C3000F8DCA /* ComposingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposingText.swift; sourceTree = "<group>"; };
 		E7C8AF762C8AEFF9006FE9AA /* NyaIME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NyaIME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C8AF792C8AEFF9006FE9AA /* NyaIMEApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyaIMEApp.swift; sourceTree = "<group>"; };
 		E7C8AF7D2C8AEFFB006FE9AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 				E7C8AF892C8B2546006FE9AA /* NyaIMEInputController.swift */,
 				E7CB992D2C8C3BDA001AE329 /* EventType.swift */,
 				E762D41D2C8C444900B57AEE /* InputState.swift */,
-				E7636DFA2C8C85C3000F8DCA /* Roman2Kana.swift */,
+				E7636DFA2C8C85C3000F8DCA /* ComposingText.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -171,7 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7C8AF7A2C8AEFF9006FE9AA /* NyaIMEApp.swift in Sources */,
-				E7636DFB2C8C85C3000F8DCA /* Roman2Kana.swift in Sources */,
+				E7636DFB2C8C85C3000F8DCA /* ComposingText.swift in Sources */,
 				E762D41E2C8C444900B57AEE /* InputState.swift in Sources */,
 				E7CB992E2C8C3BDA001AE329 /* EventType.swift in Sources */,
 				E7C8AF8A2C8B2546006FE9AA /* NyaIMEInputController.swift in Sources */,
