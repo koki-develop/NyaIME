@@ -17,12 +17,25 @@ class NyaIMEInputController: IMKInputController {
             return false
         }
 
-        if let text = event.characters {
-            self.insertText(text.uppercased())
+        switch (eventType, self.inputState) {
+        case (.input(let text), .normal):
+            self.inputState = .composing
+            fallthrough
+        case (.input(let text), .composing):
+            self.composingText.append(text)
+            self.setMarkedText(self.composingText)
             return true
-        }
 
-        return false
+        case (.enter, .composing):
+            self.insertText(self.composingText)
+            self.setMarkedText("")
+            self.composingText.removeAll()
+            self.inputState = .normal
+            return true
+
+        default:
+            return false
+        }
     }
 
     func insertText(_ text: String) {
