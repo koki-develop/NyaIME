@@ -85,6 +85,9 @@ jobs:
           EOF
           cat nyaime.rb
 
+          # https://github.com/actions/checkout#push-a-commit-using-the-built-in-token
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add ./nyaime.rb
           git commit -m "Brew cask update for nyaime version v${NYAIME_VERSION}"
           git push origin main
