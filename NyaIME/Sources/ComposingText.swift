@@ -118,11 +118,11 @@ let composingTextmap: [String: String] = [
 ]
 
 // NOTE: 変換対象は末尾 3 文字まで
-func toComposingText(_ text: String) -> String {
+func updateComposingText(_ text: String) -> String {
     if text.count == 0 {
         return ""
     }
-    
+
     // 末尾 3 文字を変換
     let last3 = text.suffix(3)
     var prefix = text.prefix(text.count - last3.count)

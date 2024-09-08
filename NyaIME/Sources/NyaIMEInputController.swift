@@ -22,7 +22,7 @@ class NyaIMEInputController: IMKInputController {
             self.inputState = .composing
             fallthrough
         case (.input(let text), .composing):
-            self.composingText = toComposingText(self.composingText + text)
+            self.composingText = updateComposingText(self.composingText + text)
             self.setMarkedText(self.composingText)
             return true
 
