@@ -26,6 +26,11 @@ class NyaIMEInputController: IMKInputController {
             self.setMarkedText(self.composingText)
             return true
 
+        case (.backspace, .composing):
+            self.composingText.removeLast()
+            self.setMarkedText(self.composingText)
+            return true
+
         case (.enter, .composing):
             self.insertText(self.composingText)
             self.setMarkedText("")

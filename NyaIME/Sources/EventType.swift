@@ -9,18 +9,21 @@ import AppKit
 
 enum EventType {
     case enter
+    case backspace
     case space
     case input(_ text: String)
 }
 
-let keycodeMap: [UInt16: EventType] = [
-    36: .enter,
-    49: .space,
-]
-
 func getEventType(_ event: NSEvent) -> EventType? {
-    if let eventType = keycodeMap[event.keyCode] {
-        return eventType
+    switch event.keyCode {
+    case 36:
+        return .enter
+    case 49:
+        return .space
+    case 51:
+        return .backspace
+    default:
+        break
     }
 
     if let text = event.characters, isPrintable(text) {
