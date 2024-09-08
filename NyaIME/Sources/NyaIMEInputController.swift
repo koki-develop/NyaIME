@@ -43,6 +43,13 @@ class NyaIMEInputController: IMKInputController {
         }
     }
 
+    override func deactivateServer(_ sender: Any!) {
+        self.insertText(self.composingText)
+        self.setMarkedText("")
+        self.composingText.removeAll()
+        self.inputState = .normal
+    }
+
     func insertText(_ text: String) {
         guard let client = client() else {
             return
