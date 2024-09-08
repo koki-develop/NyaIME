@@ -8,4 +8,5 @@
 enum InputState {
     case normal
     case composing
+    case selecting
 }
