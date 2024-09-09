@@ -56,6 +56,11 @@ class NyaIMEInputController: IMKInputController {
             self.composingText.removeAll()
             self.inputState = .normal
             return true
+
+        case (.down, .selecting):
+            fallthrough
+        case (.up, .selecting):
+            fallthrough
         case (.enter, .selecting):
             self.candidates.interpretKeyEvents([event])
             return true

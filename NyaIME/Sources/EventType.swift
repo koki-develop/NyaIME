@@ -11,6 +11,8 @@ enum EventType {
     case enter
     case backspace
     case space
+    case down
+    case up
     case input(_ text: String)
 }
 
@@ -22,6 +24,10 @@ func getEventType(_ event: NSEvent) -> EventType? {
         return .space
     case 51:
         return .backspace
+    case 125:
+        return .down
+    case 126:
+        return .up
     default:
         break
     }
