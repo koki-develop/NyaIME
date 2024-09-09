@@ -1,7 +1,7 @@
 <h1 align="center">🐈 NyaIME</h1>
 
 <p align="center">
-  <i><b>猫の IME</b></i>
+  <i><b>猫の IME for Mac</b></i>
 </p>
 
 <p align="center">
