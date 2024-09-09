@@ -4,7 +4,10 @@
   <i><b>ニャニャニャ IME</b></i>
 </p>
 
-![demo](./assets/demo.gif)
+<p align="center">
+  <img src="./assets/demo.gif" alt="demo" width="500"/>
+</p>
+
 
 <p align="center">
 日本語 | <a href="./README.nya.md">ニャニャニャ</a>
