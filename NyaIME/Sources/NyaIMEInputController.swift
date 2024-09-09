@@ -9,8 +9,14 @@ import InputMethodKit
 
 @objc(NyaIMEInputController)
 class NyaIMEInputController: IMKInputController {
+    let candidates: IMKCandidates
     var inputState: InputState = .normal
     var composingText: String = ""
+
+    override init!(server: IMKServer!, delegate: Any!, client inputClient: Any!) {
+        self.candidates = IMKCandidates(server: server, panelType: kIMKSingleColumnScrollingCandidatePanel)
+        super.init(server: server, delegate: delegate, client: inputClient)
+    }
 
     override func handle(_ event: NSEvent!, client sender: Any!) -> Bool {
         guard let eventType = getEventType(event) else {
