@@ -26,6 +26,11 @@ $ brew install koki-develop/tap/nyaime
 [GitHub リリース](https://github.com/koki-develop/NyaIME/releases/latest) から `NyaIME.pkg` をダウンロードしてください。  
 ダウンロードしたファイルを開くと NyaIME をインストールすることができます。
 
+> [!WARNING]
+>
+> 現在 `NyaIME.pkg` には署名を設定していないため、ダウンロードしたファイルをそのまま開こうとしてもセキュリティの警告が表示されて開くことができません。  
+> 開くためには Finder から `NyaIME.pkg` を右クリックして `開く` を選択してください。
+
 インストールが完了したら一度 Mac を再起動もしくはログアウトしてから、もう一度ログインしてください。  
 その後、 `設定` > `キーボード` > `入力ソース` で `+` ボタンを押して `日本語` > `NyaIME` を追加してください。
 
