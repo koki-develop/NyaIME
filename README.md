@@ -4,6 +4,8 @@
   <i><b>猫の IME</b></i>
 </p>
 
+![demo](./assets/demo.gif)
+
 <p align="center">
 日本語 | <a href="./README.nya.md">ニャニャニャ</a>
 </p>
