@@ -14,7 +14,8 @@ class NyaIMEInputController: IMKInputController {
     var composingText: String = ""
 
     override init!(server: IMKServer!, delegate: Any!, client inputClient: Any!) {
-        self.candidates = IMKCandidates(server: server, panelType: kIMKSingleColumnScrollingCandidatePanel)
+        self.candidates = IMKCandidates(
+            server: server, panelType: kIMKSingleColumnScrollingCandidatePanel)
         super.init(server: server, delegate: delegate, client: inputClient)
     }
 
@@ -37,11 +38,26 @@ class NyaIMEInputController: IMKInputController {
             self.setMarkedText(self.composingText)
             return true
 
+        case (.space, .normal):
+            self.insertText("　")
+            return true
+        case (.space, .composing):
+            self.inputState = .selecting
+            self.candidates.update()
+            self.candidates.show()
+            return true
+        case (.space, .selecting):
+            self.candidates.moveDown(sender)
+            return true
+
         case (.enter, .composing):
             self.insertText(self.composingText)
             self.setMarkedText("")
             self.composingText.removeAll()
             self.inputState = .normal
+            return true
+        case (.enter, .selecting):
+            self.candidates.interpretKeyEvents([event])
             return true
 
         default:
@@ -50,8 +66,26 @@ class NyaIMEInputController: IMKInputController {
     }
 
     override func deactivateServer(_ sender: Any!) {
+        self.candidates.hide()
         self.insertText(self.composingText)
         self.setMarkedText("")
+        self.composingText.removeAll()
+        self.inputState = .normal
+    }
+
+    override func candidates(_ sender: Any!) -> [Any]! {
+        let nya = toNya(self.composingText)
+        return [
+            nya.katakanaZenkaku,
+            nya.hiraganaZenkaku,
+            nya.katakanaHankaku,
+        ]
+    }
+
+    override func candidateSelected(_ candidateString: NSAttributedString!) {
+        self.insertText(candidateString.string)
+        self.setMarkedText("")
+        self.candidates.hide()
         self.composingText.removeAll()
         self.inputState = .normal
     }
