@@ -70,7 +70,7 @@ jobs:
           NYAIME_HOMEPAGE: ${{ steps.tap.outputs.homepage }}
           NYAIME_DESC: ${{ steps.tap.outputs.desc }}
         run: |
-          mkdir Casks
+          mkdir -p Casks
           cat <<EOF > Casks/nyaime.rb
           cask "nyaime" do
             version "${NYAIME_VERSION}"
