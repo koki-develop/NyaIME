@@ -12,6 +12,7 @@ class NyaIMEInputController: IMKInputController {
     let candidates: IMKCandidates
     var inputState: InputState = .normal
     var composingText: String = ""
+    var selectionText: String = ""
 
     override init!(server: IMKServer!, delegate: Any!, client inputClient: Any!) {
         self.candidates = IMKCandidates(
@@ -25,6 +26,11 @@ class NyaIMEInputController: IMKInputController {
         }
 
         switch (eventType, self.inputState) {
+        case (.input(let text), .selecting):
+            self.insertText(self.selectionText)
+            self.candidates.hide()
+            self.composingText.removeAll()
+            fallthrough
         case (.input(let text), .normal):
             self.inputState = .composing
             fallthrough
@@ -36,6 +42,13 @@ class NyaIMEInputController: IMKInputController {
         case (.backspace, .composing):
             self.composingText.removeLast()
             self.setMarkedText(self.composingText)
+            return true
+        case (.backspace, .selecting):
+            self.insertText(String(self.selectionText.dropLast()))
+            self.setMarkedText("")
+            self.candidates.hide()
+            self.inputState = .normal
+            self.composingText.removeAll()
             return true
 
         case (.space, .normal):
@@ -108,6 +121,7 @@ class NyaIMEInputController: IMKInputController {
 
     override func candidateSelectionChanged(_ candidateString: NSAttributedString!) {
         self.setMarkedText(candidateString.string)
+        self.selectionText = candidateString.string
     }
 
     func insertText(_ text: String) {
