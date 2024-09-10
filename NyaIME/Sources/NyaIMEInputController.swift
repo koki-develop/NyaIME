@@ -131,6 +131,21 @@ class NyaIMEInputController: IMKInputController {
             return
         }
         let cursorPosition = NSRange(location: NSNotFound, length: NSNotFound)
-        client.setMarkedText(text, selectionRange: cursorPosition, replacementRange: cursorPosition)
+
+        let highlight =
+            self.mark(forStyle: kTSMHiliteSelectedConvertedText, at: cursorPosition)
+            as? [NSAttributedString.Key: Any]
+        let underline = self.mark(
+            forStyle: kTSMHiliteConvertedText,
+            at: NSRange(location: NSNotFound, length: 0)
+        ) as? [NSAttributedString.Key: Any]
+
+        let str = switch self.inputState {
+        case .selecting:
+            NSMutableAttributedString(string: text, attributes: highlight)
+        default:
+            NSMutableAttributedString(string: text, attributes: underline)
+        }
+        client.setMarkedText(str, selectionRange: cursorPosition, replacementRange: cursorPosition)
     }
 }
