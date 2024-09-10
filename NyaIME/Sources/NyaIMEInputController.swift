@@ -80,12 +80,7 @@ class NyaIMEInputController: IMKInputController {
             self.setMarkedText(self.composingText)
             self.candidates.hide()
             return true
-
-        case (.down, .selecting):
-            fallthrough
-        case (.up, .selecting):
-            fallthrough
-        case (.enter, .selecting):
+        case (.down, .selecting), (.up, .selecting), (.enter, .selecting):
             self.candidates.interpretKeyEvents([event])
             return true
 
