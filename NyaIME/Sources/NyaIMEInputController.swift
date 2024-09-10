@@ -57,6 +57,11 @@ class NyaIMEInputController: IMKInputController {
             self.inputState = .normal
             return true
 
+        case (.esc, .composing):
+            self.setMarkedText("")
+            self.composingText.removeAll()
+            self.inputState = .normal
+            return true
         case (.esc, .selecting):
             self.inputState = .composing
             self.setMarkedText(self.composingText)
