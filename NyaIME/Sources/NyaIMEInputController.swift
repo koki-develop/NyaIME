@@ -55,6 +55,10 @@ class NyaIMEInputController: IMKInputController {
             self.insertText("　")
             return true
         case (.space, .composing):
+            if self.composingText.hasSuffix("n") {
+                self.composingText.removeLast()
+                self.composingText.append("ん")
+            }
             self.inputState = .selecting
             self.candidates.update()
             self.candidates.show()
