@@ -95,6 +95,10 @@ class NyaIMEInputController: IMKInputController {
         self.inputState = .normal
     }
 
+    override func candidateSelectionChanged(_ candidateString: NSAttributedString!) {
+        self.setMarkedText(candidateString.string)
+    }
+
     func insertText(_ text: String) {
         guard let client = client() else {
             return
