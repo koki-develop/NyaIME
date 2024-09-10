@@ -8,6 +8,7 @@
 import AppKit
 
 enum EventType {
+    case esc
     case enter
     case backspace
     case space
@@ -24,6 +25,8 @@ func getEventType(_ event: NSEvent) -> EventType? {
         return .space
     case 51:
         return .backspace
+    case 53:
+        return .esc
     case 125:
         return .down
     case 126:
