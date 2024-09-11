@@ -9,15 +9,27 @@ import InputMethodKit
 
 @objc(NyaIMEInputController)
 class NyaIMEInputController: IMKInputController {
+    let appMenu: NSMenu
     let candidates: IMKCandidates
     var inputState: InputState = .normal
     var composingText: String = ""
     var selectionText: String = ""
 
     override init!(server: IMKServer!, delegate: Any!, client inputClient: Any!) {
+        self.appMenu = NSMenu(title: "NyaIME")
+        self.appMenu.addItem(
+            NSMenuItem(
+                title: "View on GitHub", action: #selector(self.viewOnGitHub(_:)), keyEquivalent: ""
+            ))
+
         self.candidates = IMKCandidates(
             server: server, panelType: kIMKSingleColumnScrollingCandidatePanel)
+
         super.init(server: server, delegate: delegate, client: inputClient)
+    }
+
+    override func menu() -> NSMenu! {
+        return self.appMenu
     }
 
     override func handle(_ event: NSEvent!, client sender: Any!) -> Bool {
@@ -139,17 +151,27 @@ class NyaIMEInputController: IMKInputController {
         let highlight =
             self.mark(forStyle: kTSMHiliteSelectedConvertedText, at: cursorPosition)
             as? [NSAttributedString.Key: Any]
-        let underline = self.mark(
-            forStyle: kTSMHiliteConvertedText,
-            at: NSRange(location: NSNotFound, length: 0)
-        ) as? [NSAttributedString.Key: Any]
+        let underline =
+            self.mark(
+                forStyle: kTSMHiliteConvertedText,
+                at: NSRange(location: NSNotFound, length: 0)
+            ) as? [NSAttributedString.Key: Any]
 
-        let str = switch self.inputState {
-        case .selecting:
-            NSMutableAttributedString(string: text, attributes: highlight)
-        default:
-            NSMutableAttributedString(string: text, attributes: underline)
-        }
+        let str =
+            switch self.inputState {
+            case .selecting:
+                NSMutableAttributedString(string: text, attributes: highlight)
+            default:
+                NSMutableAttributedString(string: text, attributes: underline)
+            }
         client.setMarkedText(str, selectionRange: cursorPosition, replacementRange: cursorPosition)
+    }
+
+    @objc
+    func viewOnGitHub(_ sender: Any) {
+        guard let url = URL(string: "https://github.com/koki-develop/NyaIME") else {
+            return
+        }
+        NSWorkspace.shared.open(url)
     }
 }
