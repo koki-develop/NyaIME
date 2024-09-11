@@ -10,3 +10,8 @@ tasks:
     deps: [build]
     cmds:
       - cp -R ./build/Debug/NyaIME.app ~/Library/Input\ Methods
+      - task: stop
+  stop:
+    silent: true
+    cmds:
+      - pkill NyaIME
