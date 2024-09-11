@@ -10,7 +10,7 @@
 
 
 <p align="center">
-日本語 | <a href="./README.nya.md">ニャニャニャ</a>
+<a href="./README.md">日本語</a> | ニャニャニャ
 </p>
 
 # ニンニャニャーニャ
